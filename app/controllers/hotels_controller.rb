@@ -1,9 +1,9 @@
 class HotelsController < ApplicationController
-  respond_to :html, :xml, :json
+  respond_to :html, :xml, :json, :js
   before_filter :load_hotel, :except => [:new, :index, :create]
 
   def index
-    @hotels = Hotel.order(:name)
+    @hotels = Hotel.order(order_by_clause)
     respond_with @hotels
   end
 
@@ -29,5 +29,15 @@ class HotelsController < ApplicationController
   protected
   def load_hotel
     @hotel =  Hotel.find(params[:id])
+  end
+
+  def order_by_clause
+    if params[:commit] == "Sort"
+      column_name = params[:sort_column]
+      sort_order = params[:ascending] ? "ASC" : "DESC"
+      "#{column_name} #{sort_order}"
+    else
+      "name"
+    end
   end
 end

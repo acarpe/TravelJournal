@@ -1,12 +1,15 @@
 = as_of_banner Hotel
-%table
-  %tr
-    %th="Name"
-    %th="Description"
-  - @hotels.each do |hotel|
-    %tr
-      %td= link_to hotel.name, hotel_path(hotel)
-      =description_column hotel.description
-      %td
-        = link_to "Edit", edit_hotel_path(hotel)
-        = link_to "Destroy", hotel, confirm: 'Are you sure?', method: :delete
+= form_tag hotels_path, :method => :get, :remote => true do
+  %fieldset{:style=>"width:40%;"}
+    = label :sort_column, "Sort By:", :style=> "padding-left:40px;"
+    = radio_button_tag("sort_column", "Name", true)
+    Name
+    = radio_button_tag("sort_column", "Description", true)
+    Description
+    %span{:style=>"padding-left:20px;padding-right:20px;"} ~
+    = check_box_tag("ascending", 1, true, :style =>"padding-left:100px;")
+    Ascending?
+    %span{:style=>"padding-left:20px;padding-right:20px;"}
+    = submit_tag "Sort"
+#hotels
+  = render "hotels"

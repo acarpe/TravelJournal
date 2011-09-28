@@ -1,0 +1,11 @@
+%table
+  %tr
+    %th="Name"
+    %th="Description"
+  - @hotels.each do |hotel|
+    %tr
+      %td= link_to hotel.name, hotel_path(hotel)
+      =description_column hotel.description
+      %td
+        = link_to "Edit", edit_hotel_path(hotel)
+        = link_to "Destroy", hotel, confirm: 'Are you sure?', method: :delete
