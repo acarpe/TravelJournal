@@ -1,0 +1,15 @@
+$base-color: green;
+
+.banner {
+  font-style: italic;
+  font-weight: bold;
+  color: $base-color;
+}
+
+.rule {
+  height: 2px;
+  border: none;
+  background-color: $base-color;
+  color: $base-color;
+}
+

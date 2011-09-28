@@ -1,0 +1,13 @@
+<%= as_of_banner Hotel%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+<% Hotel.all.each do |hotel| %>
+  <tr>
+    <td><%=hotel.name%></td>
+    <%= description_column hotel.description%>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,13 @@
+<%= as_of_banner Trip%>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+  </tr>
+<% Trip.all.each do |trip| %>
+  <tr>
+    <td><%=trip.name%></td>
+    <td><%= formatted_date trip.date%></td>
+  </tr>
+<% end %>
+</table>
