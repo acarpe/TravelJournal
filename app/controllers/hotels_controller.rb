@@ -10,6 +10,22 @@ class HotelsController < ApplicationController
   def show
   end
 
+  def new
+    @hotel = Hotel.new
+    @cities = City.order(:name)
+  end
+
+  def create
+    @hotel = Hotel.new(params[:hotel])
+    if @hotel.save
+      redirect_to @hotel
+    else
+      @cities = City.order(:name)
+      @errors = @hotel.errors.full_messages.join("\n")
+      render :new
+    end
+  end
+
   protected
   def load_hotel
     @hotel =  Hotel.find(params[:id])

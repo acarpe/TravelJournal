@@ -1,0 +1,15 @@
+- if @errors
+  .errors= @errors
+
+%h1 New Hotel
+= form_for @hotel do |f|
+  .row
+    = f.label :name
+    = f.text_field :name
+  .row
+    = f.label :description
+    = f.text_area :description, :size => '40x4'
+  .row
+    = f.label :city_id, "City"
+    = f.collection_select(:city_id, @cities, :id, :name, :prompt=>"Select a city...")
+  = f.submit "Save"

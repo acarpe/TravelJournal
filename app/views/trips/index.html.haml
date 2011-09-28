@@ -3,7 +3,7 @@
   %tr
     %th Name
     %th Date
-  - Trip.all.each do |trip|
+  - @trips.each do |trip|
     %tr
-      %td= trip.name
+      %td= link_to trip.name, trip_path(trip)
       %td= formatted_date trip.date
