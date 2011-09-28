@@ -7,6 +7,12 @@ class TripsController < ApplicationController
   end
 
   def show
-    
+    respond_with @trip
+  end
+
+  protected
+  
+  def load_trip
+    @trip = Trip.find(params[:id])
   end
 end

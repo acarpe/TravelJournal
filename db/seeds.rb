@@ -18,9 +18,9 @@ Hotel.create([
             ])
 
 Trip.create([
-            { :name => "Australia 2006", :date => Date.now },
-            { :name => "U.S.A. 2007", :date => Date.now },
-            { :name => "Machu Picchu 2008", :date => Date.now },
-            { :name => "Sweden 2009", :date => Date.now },
-            { :name => "Cina 2010", :date => Date.now}
+            { :name => "Australia 2006", :date => Date.today },
+            { :name => "U.S.A. 2007", :date => Date.today },
+            { :name => "Machu Picchu 2008", :date => Date.today },
+            { :name => "Sweden 2009", :date => Date.today },
+            { :name => "Cina 2010", :date => Date.today}
 ])
