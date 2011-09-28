@@ -6,6 +6,7 @@ class Hotel < ActiveRecord::Base
 
   belongs_to :city
   has_many :guests
+  has_many :trips
   scope :luxury, where(:star_rating, 5)
 
   def self.rated(star_rating = 3)

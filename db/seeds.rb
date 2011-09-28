@@ -11,6 +11,10 @@ cities = City.create([
 
 Hotel.create([
               { :name => "Hollywood Hotel", :description => "the one and only", :star_rating => 1},
+              { :name => "Hollywood Hotel", :description => "the other one", :star_rating => 2},
+              { :name => "Ant Hotel", :description => "not really a good place", :star_rating => 2},
               { :name => "200th Hotel", :description => "Why not rate me?"},
               { :name => "Bates Hotel", :description => "thi is a veryt long descitpion. This comment has enough of the description to see '...'", :star_rating => 3}
             ])
+
+
