@@ -17,4 +17,10 @@ Hotel.create([
               { :name => "Bates Hotel", :description => "thi is a veryt long descitpion. This comment has enough of the description to see '...'", :star_rating => 3}
             ])
 
-
+Trip.create([
+            { :name => "Australia 2006", :date => Date.now },
+            { :name => "U.S.A. 2007", :date => Date.now },
+            { :name => "Machu Picchu 2008", :date => Date.now },
+            { :name => "Sweden 2009", :date => Date.now },
+            { :name => "Cina 2010", :date => Date.now}
+])
