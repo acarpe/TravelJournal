@@ -12,4 +12,7 @@
   .row
     = f.label :city_id, "City"
     = f.collection_select(:city_id, @cities, :id, :name, :prompt=>"Select a city...")
+  .row
+    = f.label :star_rating, "Rating"
+    = f.text_field :star_rating
   = f.submit "Save"
