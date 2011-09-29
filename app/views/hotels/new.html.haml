@@ -2,7 +2,7 @@
   .errors= @errors
 
 %h1 New Hotel
-= form_for @hotel do |f|
+= form_for @hotel, :builder => ApplicationHelper::NeatFormBuilder do |f|
   .row
     = f.label :name
     = f.text_field :name
