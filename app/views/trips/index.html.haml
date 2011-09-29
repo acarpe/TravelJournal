@@ -7,3 +7,6 @@
     %tr
       %td= link_to trip.name, trip_path(trip)
       %td= formatted_date trip.date
+      %td
+        = link_to "Edit", edit_trip_path(trip)
+        = link_to "Destroy", trip, confirm: 'Are you sure?', method: :delete

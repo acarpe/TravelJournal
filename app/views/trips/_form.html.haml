@@ -1,0 +1,11 @@
+= form_for @trip, :builder => ApplicationHelper::NeatFormBuilder do |f|
+  .row
+    = f.label :name
+    = f.text_field :name
+  .row
+    = f.label :date
+    = f.date_select :date
+  .row
+    = f.label :hotel_id, "Hotel"
+    = f.collection_select(:hotel_id, @hotels, :id, :name, :prompt=>"Select a hotel...")
+  = f.submit "Save"

@@ -8,6 +8,7 @@ class HotelsController < ApplicationController
   end
 
   def show
+    respond_with @hotel
   end
 
   def new
