@@ -26,6 +26,25 @@ class HotelsController < ApplicationController
     end
   end
 
+  def edit
+    @cities = City.order(:name)
+  end
+
+  def update
+    if @hotel.update_attributes(params[:hotel])
+      redirect_to @hotel
+    else
+      @errors = @hotel.errors.full_messages.join("\n")
+      @cities = City.order(:name)
+      render :edit
+    end
+  end
+
+  def destroy
+    @hotel.destroy
+    redirect_to(hotels_url)
+  end
+
   protected
   def load_hotel
     @hotel =  Hotel.find(params[:id])
