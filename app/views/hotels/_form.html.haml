@@ -10,5 +10,7 @@
     = f.collection_select(:city_id, @cities, :id, :name, :prompt=>"Select a city...")
   .row
     = f.label :star_rating, "Rating"
-    = f.text_field :star_rating
+    - star_ratings.each do |rating|
+      = f.radio_button :star_rating, rating[:value]
+      = rating[:description]
   = f.submit "Save"
