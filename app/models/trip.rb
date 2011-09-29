@@ -1,5 +1,5 @@
 class Trip < ActiveRecord::Base
   belongs_to :hotel
 
-  validate :name, :uniqueness => true, :presence => true
+  validates :name, :uniqueness => true, :presence => true
 end
