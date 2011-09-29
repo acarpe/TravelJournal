@@ -3,7 +3,7 @@
     %th="Name"
     %th="Description"
   - @hotels.each do |hotel|
-    %tr
+    %tr.hotel
       %td= link_to hotel.name, hotel_path(hotel)
       =description_column hotel.description
       %td
